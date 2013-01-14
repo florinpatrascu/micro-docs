@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8">
-    <title>$!{title} - Micro framework</title>
+    <title>Micro framework - $!{Tools.PathUtilities.extractName("$path")} - </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">

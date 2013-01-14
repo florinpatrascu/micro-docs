@@ -1,3 +1,3 @@
-### Database support in Micro
+## Database support in Micro
 
 `work in progress`
