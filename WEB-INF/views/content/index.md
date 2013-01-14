@@ -40,6 +40,6 @@ You will see something like this:
     .... 
     INFO org.mortbay.log - Started SelectChannelConnector@127.0.0.1:8080 
 
-And you can visit your web application by pointing your browser to: `http://localhost:8080`
+And you can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
 
 Have fun!
