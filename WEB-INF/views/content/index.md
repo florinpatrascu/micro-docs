@@ -42,4 +42,31 @@ You will see something like this:
 
 And you can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
 
-Have fun!
+We hope you'll enjoy writing web applications with **Micro**.
+
+Thank you!    
+
+### Special thanks
+  - [JPublish.org](http://jpublish.org/) - a trusty framework. There are core concepts in Micro designed as continuations of the ideas developed for JPublish; Templates and Repositories, for example.
+  - Many thanks to [Anthony Eden](https://github.com/aeden) for being an inspiring developer and a model for many of us
+  - Many thanks to [Frank Carver](https://github.com/efficacy) for contributing ideas to the [JRack](https://github.com/florinpatrascu/jrack), many of these being ported back into JRack and used my Micro
+  - [Spring framework](http://www.springsource.org/)
+  - [Apache Wink](http://en.wikipedia.org/wiki/Apache_Wink)
+  - to all our **contributors** and **supporters**
+  
+### License
+
+    Copyright (c) 2012-2013 Florin T.Pătraşcu
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    
