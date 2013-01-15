@@ -1,6 +1,6 @@
 ## Micro web application
 
-A Micro web application is a directory having the following simple structure:
+This is the layout of a Micro web application:
 
     app                            - the application folder: /blog, /my_site, etc.
      └ <anything public; js, styles, images, etc.> 
