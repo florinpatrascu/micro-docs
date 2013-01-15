@@ -9,7 +9,7 @@ This is the layout of a Micro web application:
        └ lib                       - libraries
        └ config                    - configuration files
           └ extensions             - a directory containing Micro extensions
-            └ i18N.yml             - the configuration for the default localization support
+            └ i18N.yml             - default localization configuration file
           └ locales                - folder containing the localization files
             └ messages.properties  - English terms
           └ helpers.yml            - optional file containing helpers definitions 
