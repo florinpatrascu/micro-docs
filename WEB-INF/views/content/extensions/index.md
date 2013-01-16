@@ -23,10 +23,34 @@ The extension name is: the file name itself; `i18N`, in the example above. There
 
 ### Extending Micro
 
-During the registration, an Extension has access to the following Micro core Managers:
+During the registration, an Extension has access to all the Managers used by Micro. Please see the [site](/sitecontext.md/) documentation for details. The following objects are also available:
 
+  - the name of the Extension, collected from the configuration name
   - the application configuration model, loaded from: `config/micro-config.yml`
-  - the [SiteContext](/sitecontext.md/) or `site`
+
+An Extension can define new Controllers (via the Helper model), or add its own [Repositories](/repositories.md), create new REST Routes or simply participate as a Singleton in the Rack response process. As an Extension developer you have maximum access to Micro; please develop responsible :)
+
+**1. Extending with Controllers** 
+
+todo:
+    
+**2. Extending with Routes** 
+
+todo:
+    
+**3. Extending with new Repositories** 
+
+todo:
+    
+**4. Extending the Micro cache** 
+
+todo:
+    
+**5. Extending the web content** 
+
+todo:
+    
+ 
 
 >
 > work in progress
