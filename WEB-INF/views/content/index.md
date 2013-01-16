@@ -49,7 +49,7 @@ Thank you!
 ### Special thanks
   - [JPublish.org](http://jpublish.org/) - a trusty framework. There are core concepts in Micro designed as continuations of the ideas developed for JPublish; Templates and Repositories, for example.
   - Many thanks to [Anthony Eden](https://github.com/aeden) for being an inspiring developer and a model for many of us
-  - Many thanks to [Frank Carver](https://github.com/efficacy) for contributing ideas to the [JRack](https://github.com/florinpatrascu/jrack), many of these being ported back into JRack and used my Micro
+  - Many thanks to [Frank Carver](https://github.com/efficacy) for contributing ideas to the [JRack](https://github.com/florinpatrascu/jrack), many of these being ported back into JRack and used by Micro
   - [Spring framework](http://www.springsource.org/)
   - [Apache Wink](http://en.wikipedia.org/wiki/Apache_Wink)
   - to all our **contributors** and **supporters**
