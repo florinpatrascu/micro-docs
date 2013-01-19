@@ -1,20 +1,6 @@
 ### Quickstart
-Micro is a modular Model View Controller framework for web development, and it was designed with simplicity in mind. We hope Micro will help you develop web applications while increasing the fun quotient of programming as well.
+Micro is a modular Model View Controller framework for web development, and it was designed with simplicity in mind. We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort. Before going forward please check the few [prerequisites](/misc/check_java.md) and follow the simple steps to prepare your environment to run Micro.
 
-Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort.
-
-#### Getting started
-
-To use Micro you must have Java 6 available in your path. Verify that by simply executing the following command:
-
-    $ java -version
-
-And you should see something like this:
-    
-    java version "1.6.0_37"
-    Java(TM) SE Runtime Environment (build 1.6.0_37-b06-434-11M3909)
-    Java HotSpot(TM) 64-Bit Server VM (build 20.12-b01-434, mixed mode)
-    
 #### Installing Micro
 Micro can be downloaded from Github and you will need just a few commands to make it available to your console.
 
@@ -32,10 +18,10 @@ A new directory `web_app` will be created and you can start using Micro right aw
 
 You will see something like this:
     
-    INFO ca.simplegames.micro.Micro -        _            
-    INFO ca.simplegames.micro.Micro -  _ __ (_)__ _ _ ___ 
-    INFO ca.simplegames.micro.Micro - | '  \| / _| '_/ _ \
-    INFO ca.simplegames.micro.Micro - |_|_|_|_\__|_| \___/ (v0.1)
+    INFO ca.simplegames.micro.Micro -  _ __ ___ ( ) ___ _ __ ___ 
+    INFO ca.simplegames.micro.Micro - | '_ ` _ \| |/ __| '__/ _ \ 
+    INFO ca.simplegames.micro.Micro - | | | | | | | (__| | | (_) |
+    INFO ca.simplegames.micro.Micro - |_| |_| |_|_|\___|_|  \___/  (v0.1)
     INFO ca.simplegames.micro.Micro - = a modular micro MVC Java framework
     .... 
     INFO org.mortbay.log - Started SelectChannelConnector@127.0.0.1:8080 

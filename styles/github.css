@@ -122,24 +122,25 @@ body.github{
 
 .github pre {
   margin: 1em 0 !important;
-  font-size: 90% !important;
+  font-size: 100% !important;
   background-color: #f8f8ff !important;
   border: 1px solid #dedede !important;
   padding: .5em !important;
-  line-height: 1.5em !important;
+  line-height: 1.1em !important;
   color: #444 !important;
   overflow: auto !important;
 }
 
   .github pre code {
     padding: 0 !important;
-    font-size: 100% !important;
+    font-size: 90% !important;
     background-color: #f8f8ff !important;
     border: none !important;
   }
 
 .github code {
   font-size: 90% !important;
+  font-family: Consolas, "Liberation Mono", Courier, monospace, 'Inconsolata', sans-serif;
   background-color: #f8f8ff !important;
   color: #444 !important;
   padding: 0 .2em !important;

@@ -19,7 +19,7 @@
 
     <meta name="generator" content="TextMate http://macromates.com/">
     <meta name="author" content="Florin T.PATRASCU">
-    
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/styles/github.css" type="text/css" charset="utf-8" media="screen">
     <link rel="stylesheet" href="/styles/main.css" type="text/css" charset="utf-8" media="screen">
 </head>
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="github container">
       <div class="row">
         <div id="main" class="span8">
           $content.get("markdown", $path)
