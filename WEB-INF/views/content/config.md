@@ -1,1 +1,45 @@
 ## Configuring Micro
+
+Micro depends on a YAML file for configuring the framework components. This file must be in the application configuration folder and it has the name: `micro-config.yml`. Please check below few configuration examples with in line comments explaining the meaning of each element. 
+
+### Standard config file
+
+    name: blog
+    description: My Blog
+
+    repositories:
+      content: {path: views/content, cache: memCache, config: config, default: true}
+      partials: {path: views/partials, cache: partials, config: config}
+      templates: {path: views/templates, cache: memCache}
+
+    controllers: {path: controllers, cache: controllers}
+
+    cache:
+      names: [memCache, partials, views, controllers]
+      class: ca.simplegames.micro.cache.DefaultCache
+
+
+    template_engines:
+      - engine:
+          name: velocity
+          class: ca.simplegames.micro.viewers.velocity.VelocityViewRenderer
+          options:
+              resource_cache_enabled: true
+              resource_cache_interval: 15
+              global_macro_library: global_library.vm
+          default: true
+
+      - engine:
+          name: markdown
+          class: ca.simplegames.micro.viewers.markup.MarkupViewRenderer
+
+      - engine:
+          name: freemarker
+          class: ca.simplegames.micro.viewers.freemarker.FreemarkerViewRenderer
+
+    # MICRO_ENV: production
+
+    # optional mime types to overwrite the default.
+    # welcome_file: "index.html"
+    mime_types:
+      .md: text/html; charset=utf8
