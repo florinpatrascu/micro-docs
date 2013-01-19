@@ -1,5 +1,5 @@
 ### Quickstart
-Micro is a modular Model View Controller framework for web development, and it was designed with simplicity in mind. We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort. Before going forward please check the few [prerequisites](/misc/check_java.md) and follow the simple steps to prepare your environment to run Micro.
+Micro is a modular Model View Controller framework for web development, and it was designed with simplicity in mind. We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort. Before going forward please check the few **[prerequisites](/misc/check_java.md)** and follow the simple steps to prepare your environment to run Micro.
 
 #### Installing Micro
 Micro can be downloaded from Github and you will need just a few commands to make it available to your console.
