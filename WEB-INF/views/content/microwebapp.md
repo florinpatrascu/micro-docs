@@ -70,12 +70,6 @@ The `web.xml` file is used for configuring Servlet based Java web applications a
                 <param-name>ignore</param-name>
                 <param-value>bootstrap,js,images,styles,favicon</param-value>
             </init-param>
-
-            <init-param>
-                <!--let the filter add a welcome file for empty path requests-->
-                <param-name>filterAddsWelcomeFile</param-name>
-                <param-value>true</param-value>
-            </init-param>
         </filter>
 
         <filter-mapping>
