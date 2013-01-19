@@ -93,7 +93,7 @@ But we want to break down the main sections of this page and handle the content 
     <html lang="en">
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    	<title>Powered ny Micro</title>
+    	<title>Powered by Micro</title>
     </head>
     <body>
       <div id="header">
@@ -171,7 +171,7 @@ All these together will dynamically create your "index.html" page and the browse
     <html lang="en">
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    	<title>Powered ny Micro</title>
+    	<title>Powered by Micro</title>
     </head>
     <body>
       <div id="header">
