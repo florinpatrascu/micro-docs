@@ -152,14 +152,17 @@ And then, in the root of the `views/content` folder, we create the main page: `i
   
         My site has only one page, for now.
 
-Now the magic happens. When you point your browser to your application, the template will pull all the three pages and merge them as a single html page that you see in your browser. Let's go back to the `weird` words in the the main template. As you probably know by know, Micro is using a variety of [Template Engines](/views/engines.md), and our default engine, the one used in our examples, is [Velocity](/views/engines.md#Velocity). You can learn more about these in the section dedicated to the Template Engines. The `$` sign prefixed words are objects created by Micro and you will recognize two of them right away: `$partials` and `$content`. To access a repository from within a Velocity template you can refer to the repository by name since all repositories are automatically exposed to the template. The two names above are defined in the `micro-config.yml`, and it tells to the template from where to pull the page:
+Now the magic happens. When you point your browser to your application, the template will pull all the three pages and merge them as a single html page that you see in your browser. Let's go back to the `weird` words in the the main template. As you probably know by know, Micro is using a variety of [Template Engines](/views/engines.md), and our default engine, the one used in our examples throughout this site, is: [Velocity](/views/engines.md#Velocity). You can learn more about these in the section dedicated to the [Template Engines](/views/engines.md). The `$` sign prefixed words are objects created by Micro and you will recognize two of them right away: `$partials` and `$content`. To access a repository from within a Velocity template you can refer to the repository by name since all repositories are automatically exposed to the template. The two names above are defined in the `micro-config.yml`, and it tells to the template from where to pull the page:
 
-  - $partials.get("header.html")
-    this will produce the content of the `views/partials/header.html` file
+  - `$partials.get("header.html")`
+    > this will produce the content of the `views/partials/header.html` file
     
-  - $content.get($path)
-    this is a bit special. It tells Micro to pull a file from the `content` repository, a file having the name specified in the 
+  - `$content.get($path)`
+    > this is a bit special. This line of Velocity will first look for an object called `content` which has already been made available to the Velocity engine. Once a reference to `content` is located, the `get()` method is called passing `$path` as the value; `$path` resolves to the current request path. If the requested page is `http://www.mysite.com/contact.html` then `$path` would equal `/contact.html` and if the request is `http://www.mysite.com/` then the path will be the `/index.html`.
     
-  - $partials.get("footer.html")
-    this will produce the content of the `views/partials/footer.html` file
-   
+  - `$partials.get("footer.html")`
+    > this will produce the content of the `views/partials/footer.html` file
+
+And this is how Micro is publishing your dynamic content.
+
+More details about the template rendering process can be found in the [Views](/views) section later in this guide.
