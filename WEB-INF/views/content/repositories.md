@@ -163,6 +163,34 @@ Now the magic happens. When you point your browser to your application, the temp
   - `$partials.get("footer.html")`
     > this will produce the content of the `views/partials/footer.html` file
 
+All these together will dynamically create your "index.html" page and the browser will receive this content:
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<title>Powered ny Micro</title>
+    </head>
+    <body>
+      <div id="header">
+        <p>
+          the Header 
+        </p>
+      </div>
+
+      <div id="content">
+        My site has only one page, for now.
+      </div>
+
+      <div id="footer">
+        (c) Copyright ...
+      </div>
+    </body>
+    </html>
+    
+ 
 And this is how Micro is publishing your dynamic content.
 
 More details about the template rendering process can be found in the [Views](/views) section later in this guide.
