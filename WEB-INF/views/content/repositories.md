@@ -54,7 +54,112 @@ As a performance optimization, you will have to inform Micro about your intentio
 and by creating the `config` folder in the root of the `views/templates` directory.
 
 ### Content
-Content in other repositories than `templates` should not include the html, head and body tags. This content is "pulled" my the Template and wrapped by the Template.
+Content in other repositories than `templates` should not include the html, head and body tags. This content is "pulled" by the Template and wrapped by the Template. This is how Micro is publishing content and it is similar with the the design of JPublish, just better. Micro can handle multiple repositories and they can each contain pages that can be pulled by the Templates as well as by other pages, this flexibility allowing the Designers to define the web pages with an extremely fine granularity. This procedure is similar with the [Partials](http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials) in Rails.One should be careful with the level of fragmentation because it may be very hard to test the content once the final page is aggregated in the template. A future version of Micro will automatically embed a tag in your page when running in `development` mode so you can trace the content to the parent resource.
 
+Let's use an example to help you understand how Micro is publishing content.
 
+Fo example, we want to create this very simple html page:
 
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<title>Powered ny Micro</title>
+    </head>
+    <body>
+      <div id="header">
+        <p>
+          the Header 
+        </p>
+      </div>
+
+      <div id="content">
+        My site has only one page, for now.
+      </div>
+
+      <div id="footer">
+        (c) Copyright ...
+      </div>
+    </body>
+    </html>
+
+But we want to break down the main sections of this page and handle the content dynamically. First we extract the default template. This is the content that will go into `views/templates/default.html`:
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<title>Powered ny Micro</title>
+    </head>
+    <body>
+      <div id="header">
+        $partials.get("header.html")
+      </div>
+
+      <div id="content">
+        $content.get($path)
+      </div>
+
+      <div id="footer">
+        $partials.get("footer.html")
+      </div>
+    </body>
+    </html>
+
+The template above is presuming your web application folder layout looks like this:
+
+    my_app                            
+     └ images 
+     ...
+     └ WEB-INF                    
+       └ ...                      
+       └ config                   
+          └ ...                   
+          └ micro-config.yml      
+       ...
+       └ views                    
+         └ content                
+         └ partials                
+         └ templates              
+       ...
+       
+and the `micro-config.yml` file defines the following repositories:
+
+    repositories:
+      content: {path: views/content, default: true}
+      partials: {path: views/partials}
+      templates: {path: views/templates}
+    
+We will return to the `weird` words prefixed with `$` and scattered throughout the extracted template. For now let's define the content that will be merged with the template. First we create the two partials, the `header` and the `footer`, respectively. These are two `.html` files we create in the `views/partials` folder. Like this:
+
+  - `views/partials/header.html`
+  
+        <p>
+         the Header 
+        </p>
+      
+  - `views/partials/footer.html`
+    
+        (c) Copyright ...
+    
+And then, in the root of the `views/content` folder, we create the main page: `index.html`, like this:
+
+  - `views/content/index.html`
+  
+        My site has only one page, for now.
+
+Now the magic happens. When you point your browser to your application, the template will pull all the three pages and merge them as a single html page that you see in your browser. Let's go back to the `weird` words in the the main template. As you probably know by know, Micro is using a variety of [Template Engines](/views/engines.md), and our default engine, the one used in our examples, is [Velocity](/views/engines.md#Velocity). You can learn more about these in the section dedicated to the Template Engines. The `$` sign prefixed words are objects created by Micro and you will recognize two of them right away: `$partials` and `$content`. To access a repository from within a Velocity template you can refer to the repository by name since all repositories are automatically exposed to the template. The two names above are defined in the `micro-config.yml`, and it tells to the template from where to pull the page:
+
+  - $partials.get("header.html")
+    this will produce the content of the `views/partials/header.html` file
+    
+  - $content.get($path)
+    this is a bit special. It tells Micro to pull a file from the `content` repository, a file having the name specified in the 
+    
+  - $partials.get("footer.html")
+    this will produce the content of the `views/partials/footer.html` file
+   
