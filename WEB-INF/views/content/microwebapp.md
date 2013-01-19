@@ -1,6 +1,6 @@
-## Micro web application
+## Web application layout
 
-This is a typical layout of a Micro web application:
+This is the typical layout of a Micro web application:
 
     app                            - the application folder: /blog, /my_site, etc.
      └ <anything public; js, styles, images, etc.> 
@@ -23,16 +23,16 @@ This is a typical layout of a Micro web application:
          └ templates               - main template files used as web main layouts
        └ web.xml                   - standard servlet configuration file, rarely edited.
         
-The structure above is a typical layout, Micro allowing you to organize your files with a greater flexibility. THose of you familiar with deploying Java web applications will recognize immediately the layout of a 
+Micro is allowing you to organize your files with a greater flexibility, creating your own application folder structure. Those of you familiar with deploying Java web applications will recognize immediately the layout above; it is a standard exploded .war folder. There are 2 main sections which pretty much divide up the entire layout. The content directly inside the root `/` of the app, and then everything that’s inside the WEB-INF folder. The key difference between the two is one is public, while the other one has protected access; it’s a violation of the specification for an application server to allow public access to anything in the WEB-INF folder of your application.
 
 <span class="label label-info">WEB-INF</span>
-Based on the Sun Microsystems Java Servlet 2.3 Specification, this directory contains the supporting Web resources for a Web application, including the web.xml file and the classes and lib directories. Which is why Micro's main active components are deployed in this folder. There is also a security aspect. A wrongly configured application server will not read from this folder, unless is really bad configured.
+Based on the Sun Microsystems Java Servlet 2.3 Specification, this directory contains the supporting Web resources for a Web application, including the web.xml file and the classes and lib directories. Which is why Micro's main active components are deployed in this folder. There is also a security aspect. A wrongly configured application server will not read from this folder, unless is really badly configured.
 
  - <span class="label">/classes</span>
-This directory is for utility classes, various 3rd party configuration files, and the Java compiler output directory. The classes in this directory are used by the application class loader to load the classes or other resources.
+This directory is for utility classes, various 3rd party configuration files, and the Java compiler output directory. The classes in this directory are used by the application class loader to load the classes or other resources. You don't need to include this folder if it is empty.
 
  - <span class="label">/lib</span>
-The supporting JAR files that your Web application references. Any classes in .jar files placed in this directory will be available for your Web application
+The supporting JAR files that your Web application references. Any classes in .jar files placed in this directory will be available for your Web application. This is the place where you put all of your web application’s third party jar files.
 
 <span class="label label-info">config</span>
 This folder contains various files used for configuring the Micro framework. Please follow this [link](/config.md/) for a detailed descriptions.
@@ -83,4 +83,17 @@ The `web.xml` file is used for configuring Servlet based Java web applications a
             <url-pattern>/*</url-pattern>
         </filter-mapping>
     </web-app>
-    
+
+#### JBoss only
+If you're deploying the web application on JBoss, then you will need one more file in the `WEB-INF` folder, the: `jboss-web.xml` file, that can be configured this way:
+
+   
+    <?xml version="1.0" encoding="UTF-8"?>  
+    <!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 2.3//EN"   
+        "http://www.jboss.org/j2ee/dtd/jboss-web_3_0.dtd">  
+  
+    <jboss-web>    
+       <context-root>/</context-root>    
+    </jboss-web>  
+
+The context-root element here basically tells JBoss to load up the application into the root context of the application server, all the calls to `http://localhost:8080/` will be resolved by your web application.

@@ -1,4 +1,4 @@
-### Overview
+### Quickstart
 Micro is a modular Model View Controller framework for web development, and it was designed with simplicity in mind. We hope Micro will help you develop web applications while increasing the fun quotient of programming as well.
 
 Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort.
