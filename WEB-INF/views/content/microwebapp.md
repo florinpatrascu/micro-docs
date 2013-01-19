@@ -1,10 +1,10 @@
 ## Micro web application
 
-This is the layout of a Micro web application:
+This is a typical layout of a Micro web application:
 
     app                            - the application folder: /blog, /my_site, etc.
      └ <anything public; js, styles, images, etc.> 
-     └ WEB-INF                     - 
+     └ WEB-INF                     - Servlet specific folder 
        └ classes                   - compiled java filed
        └ lib                       - libraries
        └ config                    - configuration files
@@ -12,17 +12,18 @@ This is the layout of a Micro web application:
             └ i18N.yml             - default localization configuration file
           └ locales                - folder containing the localization files
             └ messages.properties  - English terms
-          └ helpers.yml            - optional file containing helpers definitions 
+          └ helpers                - optional folder containing helpers definitions 
+            └ my_helper.yml        - a user helper 
           └ routes.yml             - optional file defining your REST API
-          └ application.bsh        - this is a startup controller  
-          └ micro-config.yml       - Micro's main configuration file
+          └ application.bsh        - this is the startup controller  
+          └ micro-config.yml       - Micro configuration file
        └ controllers               - application controllers, scripting
        └ views                     - repositories
          └ content                 - main repository
          └ templates               - main template files used as web main layouts
        └ web.xml                   - standard servlet configuration file, rarely edited.
         
-The structure above is the proposed layout, Micro allowing you to organize your files with a greater flexibility. THose of you familiar with deploying Java web applications will recognize immediately the layout of a 
+The structure above is a typical layout, Micro allowing you to organize your files with a greater flexibility. THose of you familiar with deploying Java web applications will recognize immediately the layout of a 
 
 <span class="label label-info">WEB-INF</span>
 Based on the Sun Microsystems Java Servlet 2.3 Specification, this directory contains the supporting Web resources for a Web application, including the web.xml file and the classes and lib directories. Which is why Micro's main active components are deployed in this folder. There is also a security aspect. A wrongly configured application server will not read from this folder, unless is really bad configured.
