@@ -6,7 +6,7 @@ These are the few steps you need to follow if you want to install this site on y
 
 ### Setup
 
-To run this site all you need is Java 6. All the required libraries are included and Micro is coming with its own web server included; Jetty. We will provide Maven support in the near future.
+To run this site all you need is Java >=6. All the required libraries are included and Micro is coming with its own web server included; Jetty. We will provide Maven support in the near future.
 
     $ git clone https://florin@bitbucket.org/florin/micro-docs.simplegames.ca.git
     $ cd micro-docs.simplegames.ca.git
@@ -24,4 +24,4 @@ You will see immediately the messages emitted by Micro, excerpt:
     
 ### Creating content or editing existing one
 
-Micro is able to use multiple Template engines in the same time: Velocity, Freemarker or Markdown, but for the documentation we're using the .md files; Markdown documents, respectively. You can edit exiting files or add new files while Micro is running because it is running in development mode and in development mode the cache is disabled.
+Micro is able to use multiple Template engines in the same time: Velocity, FreeMarker or Markdown, but for the documentation we're using the `.md` files; Markdown documents, respectively. You can edit exiting files or add new files while Micro is running because it is running in development mode and in development mode the cache is disabled.
