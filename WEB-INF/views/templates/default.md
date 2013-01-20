@@ -7,21 +7,20 @@
     <meta charset="utf-8">
     <title>Micro framework - $!{Tools.PathUtilities.extractName("$path")} - </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Florin T.PATRASCU">
+
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/styles/github.css" type="text/css" charset="utf-8" media="screen">
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" charset="utf-8" media="screen">
+
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-
-    <meta name="generator" content="TextMate http://macromates.com/">
-    <meta name="author" content="Florin T.PATRASCU">
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/styles/github.css" type="text/css" charset="utf-8" media="screen">
-    <link rel="stylesheet" href="/styles/main.css" type="text/css" charset="utf-8" media="screen">
 </head>
 
 <body>
@@ -51,6 +50,19 @@
     </footer>
     
     <a href="https://github.com/florinpatrascu/micro"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+    
+    ## Include Google analytics if the site runs in production mode
+    #if($site.isProduction())
+     $!partials.get("google_analytics.html")
+    #end
     
 </body>
 </html>
