@@ -95,7 +95,3 @@ As mentioned before, the View will receive a thread-safe context already contain
   - "params" - a hash containing the input parameters received with the request
   - the repository names (as declared in the `micro-config.yml`)
   - and more. See: [MicroContext](/microcontext.md), for more details.
-
-  
-    
-
