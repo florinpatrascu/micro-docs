@@ -83,4 +83,6 @@ To build your own Template engine you must implement the `ca.simplegames.micro.v
 
 <span class="label label-important">Heads up!</span> 
     
-    ViewRenderer implementations should strive to make use of caching mechanisms provided by their respective template engines or use the cache support form Micro. This will avoid unnecessary parsing.
+    ViewRenderer implementations should strive to make use of caching mechanisms provided by their respective template engines or use the cache support form Micro. 
+    
+    This will avoid unnecessary parsing and it will boost the site performance.
