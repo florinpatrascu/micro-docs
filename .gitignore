@@ -1,2 +1,12 @@
-*.tmproj
+dist/
+build/
+out/
+micro.iml
+*.ipr
+*.iws
+.idea/
 .DS_Store
+.Spotlight-V100
+.Trashes
+*.tmproj
+target
