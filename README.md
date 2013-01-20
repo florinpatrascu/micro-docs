@@ -25,3 +25,4 @@ You will see immediately the messages emitted by Micro, excerpt:
 ### Creating content or editing existing one
 
 Micro is able to use multiple Template engines in the same time: Velocity, FreeMarker or Markdown, but for the documentation we're using the `.md` files; Markdown documents, respectively. You can edit exiting files or add new files while Micro is running because it is running in development mode and in development mode the cache is disabled.
+Micro is able to use multiple Template engines in the same time: Velocity, FreeMarker or Markdown, but for the documentation we're using the `.md` files; Markdown documents, respectively. You can edit exiting files or add new files while Micro is running because it is running in development mode and in development mode the cache is disabled.
