@@ -13,7 +13,7 @@ All the repositories are defined in the `micro-config.yml` file, and here is an 
 
 Let's talk about the two main repositories.
 
-### <name id="templates"/>Templates
+### <name id="templates"/>the Templates
 The `templates` repository contain the files which are used by the web designers to provide the visual "shell" for your web site. Most sites will only have one template which is applied to all the pages within the web site. In the example above this file is located in the `views/templates` directory and is called `default.html`. You could also provide default site-wide templates for other types of content, Markdown for example, by putting an appropriate template file in the `templates` folder. In the case of Markdown you could call it `default.md` and then all requests which end with `.md` would use that primary template. The documentation web app for Micro (this) was built this way.
 
 If you are familiar with [JPublish](http://code.google.com/p/jpublish/wiki/Templates) this concept is not completely foreign to you. Let's explore it.
@@ -53,8 +53,10 @@ As a performance optimization, you will have to inform Micro about your intentio
 
 and by creating the `config` folder in the root of the `views/templates` directory.
 
-### Content
-Content in other repositories than `templates` should not include the html, head and body tags. This content is "pulled" by the Template and wrapped by the Template. This is how Micro is publishing content and it is similar with the the design of JPublish, just better. Micro can handle multiple repositories and they can each contain pages that can be pulled by the Templates as well as by other pages, this flexibility allowing the Designers to define the web pages with an extremely fine granularity. This procedure is similar with the [Partials](http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials) in Rails.One should be careful with the level of fragmentation because it may be very hard to test the content once the final page is aggregated in the template. A future version of Micro will automatically embed a tag in your page when running in `development` mode so you can trace the content to the parent resource.
+### <name id="content"/> the Content
+All the web pages stored in various repositories are considered dynamic by default and processed at run-time by dedicated Template engines. Pages, containing html tags, or template specific language directives, are **pulled** and wrapped by the `default` template, unless the template name is specified by the developer/designer. This is how Micro is publishing content and it is similar with the original design of [JPublish](http://jpublish.org), probably a bit better ;) 
+
+Micro can handle multiple repositories and they can each contain pages that can be pulled by the Templates as well as by other pages, this flexibility allowing the Designers to define the web pages with an extremely fine granularity. This procedure is similar with the [Partials](http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials) in Rails.One should be careful with the level of fragmentation because it may be very hard to test the content once the final page is aggregated in the template. A future version of Micro will automatically embed a tag in your page when running in `development` mode so you can trace the content to the parent resource.
 
 Let's use an example to help you understand how Micro is publishing content.
 
@@ -134,7 +136,7 @@ and the `micro-config.yml` file defines the following repositories:
       partials: {path: views/partials}
       templates: {path: views/templates}
     
-We will return to the `weird` words prefixed with `$` and scattered throughout the extracted template. For now let's define the content that will be merged with the template. First we create the two partials, the `header` and the `footer`, respectively. These are two `.html` files we create in the `views/partials` folder. Like this:
+We will return to the `weird` words prefixed with `$` and scattered throughout the extracted template. For now let's define the content that will be merged with the template. First we create the two partials, the: `header` and the `footer`, respectively. These are two `.html` files we create in the `views/partials` folder. Like this:
 
   - `views/partials/header.html`
   
@@ -190,7 +192,40 @@ All these together will dynamically create your "index.html" page and the browse
     </body>
     </html>
     
- 
+Since it is so easy, let's say you want to reuse the same template but for another page: `about_me.html`. The only thing you'll have to do is to create the new file in the `views/content/`. This is the file:
+
+    I am Chuck Norris and I've been to Mars already; that's why there are no signs of life
+    there. 
+
+When you point your browser to `http://www.mysite.com/about_me.html` the browser will receive this result:
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<title>Powered by Micro</title>
+    </head>
+    <body>
+      <div id="header">
+        <p>
+          the Header 
+        </p>
+      </div>
+
+      <div id="content">
+        I am Chuck Norris and I've been to Mars already; that's why there are no signs of 
+        life there.
+      </div>
+
+      <div id="footer">
+        (c) Copyright ...
+      </div>
+    </body>
+    </html>
+
+
 And this is how Micro is publishing your dynamic content.
 
 More details about the template rendering process can be found in the [Views](/views) section later in this guide.
