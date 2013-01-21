@@ -43,11 +43,7 @@
       <dependency>
           <groupId>ca.simplegames</groupId>
           <artifactId>micro</artifactId>
-<<<<<<< HEAD
-          <version>0.1</version>
-=======
           <version>0.2</version>
->>>>>>> 6fe1a2e1f6bb7b6a6f6d96e7dadf9d054d272e44
       </dependency>
 
       <dependency>
@@ -122,20 +118,6 @@
         </dependency>
 
 
-<<<<<<< HEAD
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty</artifactId>
-            <version>6.1.21</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-            <version>6.1.21</version>
-        </dependency>
-
-=======
         <!-- Jetty -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -148,7 +130,6 @@
             <version>7.6.0.v20120127</version>
         </dependency>
  
->>>>>>> 6fe1a2e1f6bb7b6a6f6d96e7dadf9d054d272e44
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>jsr311-api</artifactId>
