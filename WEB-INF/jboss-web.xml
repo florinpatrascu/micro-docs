@@ -1,0 +1,4 @@
+<jboss-web>
+    <context-root>/</context-root>
+    <virtual-host>micro-docs.simplegames.ca</virtual-host>
+</jboss-web>
