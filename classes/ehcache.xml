@@ -25,13 +25,23 @@
             timeToLiveSeconds="20"
             />
 
+    <cache name="memCache"
+            maxElementsInMemory="500"
+            eternal="false"
+            timeToIdleSeconds="320"
+            timeToLiveSeconds="420"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="60"
+             />
+             
     <cache name="views"
-           maxElementsInMemory="500"
-           eternal="false"
-           timeToIdleSeconds="320"
-           timeToLiveSeconds="420"
-           overflowToDisk="false"
-           diskPersistent="false"
-           diskExpiryThreadIntervalSeconds="60"
-            />
-</ehcache>
+            maxElementsInMemory="500"
+            eternal="false"
+            timeToIdleSeconds="320"
+            timeToLiveSeconds="420"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="60"
+             />
+ </ehcache>

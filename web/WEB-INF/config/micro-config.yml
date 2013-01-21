@@ -7,10 +7,10 @@ repositories:
   content: {path: views/content, cache: views, default: true}
   templates: {path: views/templates, cache: views}
 
-controllers: {path: controllers, cache: views}
+controllers: {path: controllers, cache: memCache}
 
 cache:
-  names: [memCache, partials, views, controllers]
+  names: [memCache, views]
   class: ca.simplegames.micro.cache.DefaultCache
 
 template_engines:
