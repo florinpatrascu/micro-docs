@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 dist/
 build/
 out/
@@ -9,4 +10,10 @@ micro.iml
 .Spotlight-V100
 .Trashes
 *.tmproj
+=======
+.classpath
+.project
+.settings
+.springBeans
+>>>>>>> 6fe1a2e1f6bb7b6a6f6d96e7dadf9d054d272e44
 target
