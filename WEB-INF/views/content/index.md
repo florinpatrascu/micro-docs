@@ -19,13 +19,13 @@ A new directory `web_app` will be created and you can start using Micro right aw
 
 You will see something like this:
     
-    INFO ca.simplegames.micro.Micro -  _ __ ___ ( ) ___ _ __ ___ 
-    INFO ca.simplegames.micro.Micro - | '_ ` _ \| |/ __| '__/ _ \ 
-    INFO ca.simplegames.micro.Micro - | | | | | | | (__| | | (_) |
-    INFO ca.simplegames.micro.Micro - |_| |_| |_|_|\___|_|  \___/  (v0.1)
-    INFO ca.simplegames.micro.Micro - = a modular micro MVC Java framework
+    -  _ __ ___ ( ) ___ _ __ ___ 
+    - | '_ ` _ \| |/ __| '__/ _ \ 
+    - | | | | | | | (__| | | (_) |
+    - |_| |_| |_|_|\___|_|  \___/  (v0.1)
+    - = a modular micro MVC Java framework
     .... 
-    INFO org.mortbay.log - Started SelectChannelConnector@127.0.0.1:8080 
+    - Started SelectChannelConnector@127.0.0.1:8080 
 
 You can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
 

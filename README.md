@@ -14,13 +14,13 @@ To run this site all you need is Java >=6. All the required libraries are includ
 
 You will see immediately the messages emitted by Micro, excerpt:
     
-    INFO ca.simplegames.micro.Micro -  _ __ ___ ( ) ___ _ __ ___ 
-    INFO ca.simplegames.micro.Micro - | '_ ` _ \| |/ __| '__/ _ \ 
-    INFO ca.simplegames.micro.Micro - | | | | | | | (__| | | (_) |
-    INFO ca.simplegames.micro.Micro - |_| |_| |_|_|\___|_|  \___/  (v0.1)
-    INFO ca.simplegames.micro.Micro - = a modular micro MVC Java framework
-    .... 
-    INFO org.mortbay.log - Started SelectChannelConnector@127.0.0.1:8080 
+    -  _ __ ___ ( ) ___ _ __ ___ 
+    - | '_ ` _ \| |/ __| '__/ _ \ 
+    - | | | | | | | (__| | | (_) |
+    - |_| |_| |_|_|\___|_|  \___/  (v0.1)
+    - = a modular micro MVC Java framework
+    ...
+    - Started SelectChannelConnector@127.0.0.1:8080 
     
 ### Creating content or editing existing one
 
