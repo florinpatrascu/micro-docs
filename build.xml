@@ -1,0 +1,12 @@
+<project name="micro-docs.simplegames.ca">
+    <target name="clean">
+      <echo>cleaning...</echo>
+    	<delete dir="target"/>
+    </target>
+    <target name="init">
+      	<mkdir dir="target/classes"/>
+    </target>
+    <target name="install">
+      <echo>installing...</echo>
+    </target>
+</project>

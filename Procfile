@@ -1,1 +1,1 @@
-web:    java $JAVA_OPTS -cp target/classes:target/dependency/* ca.simplegames.micro.MicroAtHeroku 80
+web:    java $JAVA_OPTS -cp classes/*:libs/* ca.simplegames.micro.WebServer web
