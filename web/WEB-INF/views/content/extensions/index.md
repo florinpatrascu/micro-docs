@@ -17,9 +17,22 @@ Extensions are loaded from Micro's `config/extensions` folder being defined by s
     resource_cache: 10
     base_names: [config/locales/messages]
     
-**todo**: load the extensions in a preferred order
-
 The extension name is: the file name itself; `i18N`, in the example above. There is only one element of this file that matters to Micro, the: `class`. The `class` contains the name of the Java object implementing that will be instantiated by Micro. Micro will instantiate the class and will call the `register` method, passing in the configuration file as a Map containing all the elements of that file. Implement `ca.simplegames.micro.Extension` and your extension is ready to go. Have a look at how `ca.simplegames.micro.extensions.i18n.I18NExtension` was implemented as a quick implementation example.
+
+The extensions are used by Micro only if they are required by you. To specify the extensions you need in your application, edit the application startup controller: `config/application.bsh`, and enumerate the extensions you want:
+    
+    site.ExtensionsManager
+        .require(<extension_name>)
+        .require(<extension_name>)
+        . ...
+        .require(<extension_name>);
+
+Example of loading just the localization support:
+
+    site.ExtensionsManager
+        .require("i18N");
+
+This technique will allow you to control your extensions' load order, in case they should be loaded in regards to other, related, extensions.
 
 ### Extending Micro
 

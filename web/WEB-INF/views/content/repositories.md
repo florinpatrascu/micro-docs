@@ -13,7 +13,7 @@ All the repositories are defined in the `micro-config.yml` file, and here is an 
 
 Let's talk about the two main repositories.
 
-### <name id="templates"/>the Templates
+### <name id="templates"/>The Templates
 The `templates` repository contain the files which are used by the web designers to provide the visual "shell" for your web site. Most sites will only have one template which is applied to all the pages within the web site. In the example above this file is located in the `views/templates` directory and is called `default.html`. You could also provide default site-wide templates for other types of content, Markdown for example, by putting an appropriate template file in the `templates` folder. In the case of Markdown you could call it `default.md` and then all requests which end with `.md` would use that primary template. The documentation web app for Micro (this) was built this way.
 
 If you are familiar with [JPublish](http://code.google.com/p/jpublish/wiki/Templates) this concept is not completely foreign to you. Let's explore it.
@@ -53,7 +53,7 @@ As a performance optimization, you will have to inform Micro about your intentio
 
 and by creating the `config` folder in the root of the `views/templates` directory.
 
-### <name id="content"/> the Content
+### <name id="content"/>The Content
 All the web pages stored in various repositories are considered dynamic by default and processed at run-time by dedicated Template engines. Pages, containing html tags, or template specific language directives, are **pulled** and wrapped by the `default` template, unless the template name is specified by the developer/designer. This is how Micro is publishing content and it is similar with the original design of [JPublish](http://jpublish.org), probably a bit better ;) 
 
 Micro can handle multiple repositories and they can each contain pages that can be pulled by the Templates as well as by other pages, this flexibility allowing the Designers to define the web pages with an extremely fine granularity. This procedure is similar with the [Partials](http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials) in Rails.One should be careful with the level of fragmentation because it may be very hard to test the content once the final page is aggregated in the template. A future version of Micro will automatically embed a tag in your page when running in `development` mode so you can trace the content to the parent resource.
