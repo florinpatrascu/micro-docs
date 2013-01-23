@@ -6,7 +6,7 @@ These are the few steps you need to follow if you want to install this site on y
 
 ### Setup
 
-To run this web application you need is [Java 6 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html). All the required libraries are included and Micro is coming with its own web server included; Jetty 6.2.x
+To run this web application you need [Java 6 or later](http://www.oracle.com/technetwork/java/javase/downloads/index.html). All the required libraries are included and Micro is distributed with its own web server included; [Jetty 6.2.x](http://jetty.codehaus.org/jetty/)
 
     $ git clone https://florin@bitbucket.org/florin/micro-docs.simplegames.ca.git
     $ cd micro-docs.simplegames.ca.git
