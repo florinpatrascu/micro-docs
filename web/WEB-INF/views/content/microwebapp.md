@@ -2,25 +2,25 @@
 
 This is the typical layout of a Micro web application:
 
-    app                            - the application folder: /blog, /my_site, etc.
+    app/                           - the application folder: /blog, /my_site, etc.
      └ <anything public; js, styles, images, etc.> 
-     └ WEB-INF                     - Servlet specific folder 
-       └ classes                   - compiled java filed
-       └ lib                       - libraries
-       └ config                    - configuration files
-          └ extensions             - a directory containing Micro extensions
+     └ WEB-INF/                    - Servlet specific folder 
+       └ classes/                  - compiled java filed
+       └ lib/                      - libraries
+       └ config/                   - configuration files
+          └ extensions/            - a directory containing Micro extensions
             └ i18N.yml             - default localization configuration file
-          └ locales                - folder containing the localization files
+          └ locales/               - folder containing the localization files
             └ messages.properties  - English terms
-          └ helpers                - optional folder containing helpers definitions 
+          └ helpers/               - optional folder containing helpers definitions 
             └ my_helper.yml        - a user helper 
           └ routes.yml             - optional file defining your REST API
           └ application.bsh        - this is the startup controller  
           └ micro-config.yml       - Micro configuration file
-       └ controllers               - application controllers, scripting
-       └ views                     - repositories
-         └ content                 - main repository
-         └ templates               - main template files used as web main layouts
+       └ controllers/              - application controllers, scripting
+       └ views/                    - repositories
+         ├─ content/               - main repository
+         └─ templates/             - main template files used as web main layouts
        └ web.xml                   - standard servlet configuration file, rarely edited.
         
 Micro is allowing you to organize your files with a greater flexibility, creating your own application folder structure. Those of you familiar with deploying Java web applications will recognize immediately the layout above; it is a standard exploded .war folder. There are 2 main sections which pretty much divide up the entire layout. The content directly inside the root `/` of the app, and then everything that’s inside the WEB-INF folder. The key difference between the two is one is public, while the other one has protected access; it’s a violation of the specification for an application server to allow public access to anything in the WEB-INF folder of your application.
