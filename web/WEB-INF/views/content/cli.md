@@ -2,7 +2,7 @@
 
 Micro is providing a limited set of command line tools to help you quickly creating a new web application, start it in server mode for quickly prototyping and for deploying the app to the cloud. It is a very early support currently in development but please stay tuned and follow this page for updates.
 
-The command line for Micro is: `micro`, and provided you have installed properly the framework, the following functions are available:
+The command line for Micro is: `micro`, and provided you have [installed properly](/misc/check_java.md#cli_path/) the framework, the following functions are available:
 
     $ micro new 
     $ micro start 
@@ -14,7 +14,7 @@ Creating a new web application. Go to a folder dedicated to creating projects, s
     $ cd ~/projects
     $ micro new hello -d "A Hello world web application"
 
-A new folder is created: `hello`, and it contains a typical Micro folder structure with everuthing you need to start developing a web site. This is the resulted layout:
+A new folder is created: `hello`, and it contains a typical Micro folder structure with everything you need to start developing a web site. This is the resulted layout:
 
     hello
      └ js
@@ -43,7 +43,7 @@ You will see immediately the following message (simplified, for brevity):
      _ __ ___ ( ) ___ _ __ ___ 
     | '_ ` _ \| |/ __| '__/ _ \ 
     | | | | | | | (__| | | (_) |
-    |_| |_| |_|_|\___|_|  \___/  (v0.1)
+    |_| |_| |_|_|\___|_|  \___/ 
     = a modular micro MVC Java framework
 
     Application name: Hello

@@ -3,35 +3,55 @@
 We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort. Before going forward please check the few **[prerequisites](/misc/check_java.md)** and follow the simple steps there to prepare your environment for running Micro. 
 
 #### Installing Micro
-Micro can be downloaded from Github and you will need just a few commands to make it available to your console.
+Micro can be downloaded from Github and you will need just a few commands to make it available to your console. First, get the code <span class="muted">(the examples below are presuming your home folder)</span>:
+    
+    $ git clone https://github.com/florinpatrascu/micro
 
-    $ ...
+Build the framework:
+
+    $ cd micro
+    $ ant dist
+    
+Add the framework installation folder to your current path. For OSX, this means doing something like this:
+
+    $ echo "export PATH=$PATH:~/micro/bin" >> ~/.profile
+
+or edit your profile file and add this: 
+
+    export PATH=$PATH:~/micro/bin
+
+Now check if the Micro command line tools (CLI) are available:
+    
+    $ cd
+    $ micro -h
+
+If everything is in place and properly installed, you should see Micro displaying the help text for the available commands. More about the CLI here: [The Micro console](/cli.md/). 
+    
 
 #### Creating a new Micro web application
-Create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
+Micro is providing a simple command line interface (CLI) to help you creating new applications, start a local Micro application in server mode and deploy the web application. Provided you have installed the Micro command line tools properly, the following few commands will create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
 
-    $ micro new hellow_world
+    $ micro new hello_world
+    $ cd hello_world
+    $ micro start
 
-A new directory `web_app` will be created and you can start using Micro right away:
+You will see something like this almost immediately:
     
-    $ cd hellow_world
-    $ ./bin start
+     _ __ ___ ( ) ___ _ __ ___ 
+    | '_ ` _ \| |/ __| '__/ _ \ 
+    | | | | | | | (__| | | (_) |
+    |_| |_| |_|_|\___|_|  \___/ 
+    = a modular micro MVC Java framework
 
-You will see something like this:
-    
-    -  _ __ ___ ( ) ___ _ __ ___ 
-    - | '_ ` _ \| |/ __| '__/ _ \ 
-    - | | | | | | | (__| | | (_) |
-    - |_| |_| |_|_|\___|_|  \___/  (v0.1)
-    - = a modular micro MVC Java framework
-    .... 
-    - Started SelectChannelConnector@127.0.0.1:8080 
-
-You can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
+and you can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
 
 We hope you'll enjoy writing web applications with **Micro**.
 
 Thank you!    
+
+
+### Issues tracker
+Please report any issues at: [https://github.com/florinpatrascu/micro/issues](https://github.com/florinpatrascu/micro/issues)
 
 ### Special thanks
   - to my [wife](http://twitter.com/simonuta), for understanding my endless passion for programming.
