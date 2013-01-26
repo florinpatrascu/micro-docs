@@ -3,13 +3,17 @@
 <html>
 <head>
   <title>404 - File not found</title>
+  <link rel="stylesheet" href="/styles/github.css" type="text/css" charset="utf-8" media="screen">
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" charset="utf-8" media="screen">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
     <h1>404</h1>
-    <div class="github">
-        <blockquote>
-            ${error.Message}
-        </blockquote>
-    </div>
+    <h3>
+      File not found: $!{path}
+    </h3>
 </body>
 </html>
