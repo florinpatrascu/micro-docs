@@ -28,4 +28,8 @@ while a controller will have to use the context:
       ...
     }
 
+### Distributing/installing Helpers
+If you like a certain helper, then most probably you will have a `.jar` library containing the helper implementation. Copy this file to `WEB-INF/lib`; basically make it available in the `CLASSPATH`. If instead of the `.jar`, you have a simple compiled Java class or more classes, then copy these binaries to: `WEB-INF/classes`. Micro will have to find the implementation in the `CLASSPATH` at start-up time, otherwise it will throw an error that you can inspect in the server logs. Edit or copy the helper configuration file to the `config/helpers` folder and restart Micro. That's all. Now you can use the helper(s).
+
+### Implement your own helper 
 Simply extend the `ca.simplegames.micro.Helper` class if you want to implement your own helper. A list with the known helpers can be found here: [Helpers catalog](/helpers/)
