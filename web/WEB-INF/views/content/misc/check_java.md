@@ -14,8 +14,8 @@ And you should see something like this:
 
 
 ### Ant
-> todo
+The [Apache Ant](http://ant.apache.org/) Java library is required if you want to build Micro from sources. Follow this link for details about how to install `ant`: [Installing Apache Ant](http://ant.apache.org/manual/install.html)
 
 
 ### Maven (optional)
-> todo
+You can also use [Apache Maven](http://maven.apache.org/) to build Micro. Details about Maven can be found on their site: [Maven in 5 minutes](http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
