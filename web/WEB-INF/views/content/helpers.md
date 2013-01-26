@@ -21,7 +21,11 @@ Following the example above, a view will be able to use a helper like this (Velo
     
     $hello
 while a controller will have to use the context:
-
-    context.get("hello");
     
+    public void execute(MicroContext context, Map config) throws ...{
+      ...
+      HelloHelper hello = (HelloHelper) context.get("hello");
+      ...
+    }
+
 Simply extend the `ca.simplegames.micro.Helper` class if you want to implement your own helper. A list with the known helpers can be found here: [Helpers catalog](/helpers/)
