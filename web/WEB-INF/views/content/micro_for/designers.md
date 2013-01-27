@@ -1,1 +1,3 @@
-## Micro for Designers
+## Micro for Designers ##
+
+> in progress
