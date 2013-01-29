@@ -77,23 +77,23 @@ The user will get back a nice and a consistent single html page that in the back
   
 At the rendering time, after the business logic was evaluated, your `registration.html` page from the `views/content` folder, will **pull** the `login_dialog.html` from the `views/partials` folder and will result into a complete functional Registration dialog page. While this is happening Micro will take care of caching the most frequent used content so you will not disappoint your users. 
 
-You most probably want to localize your web pages and if so then you will probably want to read the [Internationalization](internationalization.md) topic. The summary of it being:
+A bit about localization. You most probably want to localize your web pages and if so then you will want to check the [Internationalization](internationalization.md) topic. Here's the gist of it:
 
-  - translate your text and store it as `label=translated text` in the `message_<lng>.properties` files, where the `<lng>` stands for language: `en` for English, `de` for German, and so on; see the [Language localization](http://en.wikipedia.org/wiki/Language_localisation) for more details.
-  - display translated text by wrapping the labels into some convenient macros provided by Micro ofor those pages using the Velocity template language. Example:
+  - translate your text and store it as `label=translated text` in the `message_<lng>.properties` files, where the `<lng>` stands for language; `en` for English, `de` for German, and so on; see the [Language localization](http://en.wikipedia.org/wiki/Language_localisation) for more details.
+  - display translated text by wrapping the labels into some convenient macros provided by Micro for the pages using the Velocity template language. Example:
 
-    `<h1>#i18N("hello_world")</h1>`
+        `<h1>#i18N("hello_world")</h1>`
 
-will display `<h1>Hello world!</h1>` for English and `<h1>γειά σου κόσμος</h1>` for Greek, if the user selects different languages.
+The snippet above will display: **`Hello world!`**, for English and: **`γειά σου κόσμος`**, for Greek; if the user selects different languages.
 
 ### 3. Deployment <name id="deployment">
-Micro was designed to help you quickly prototype, that's why you can "start" your web application in server mode and start designing your content right away. Unless you add new repositories or move them around, you don't have to restart the app in order to see your changes. Micro starts in `development` mode and there is no caching in this mode. To "start" the `demo` web application, simply run this command:
+Micro was designed to help you quickly prototype, that's why we wanted to make sure you can "start" your web application in server mode and begin designing your content right away. Unless you add new repositories or move them around, you don't have to restart the app in order to see your changes. Micro starts in `development` mode and there is no caching in this mode. To "start" the `demo` web application, simply run this command:
 
     $ micro start
 
-And continue to work on your designs. Micro's footprint is so small your laptop will thank you for such a small web development framework. It's a micro framework :)
+And continue to work on your designs. To stop the server, press `CTRL-C` in the terminal were Micro is running, and the server stops. Micro's footprint is so small your laptop will thank you for such a small web development framework. It's a micro framework :)
 
-As soon as you have a layout you would like to expose it to your client, you could quickly deploy your app into the cloud and start your Micro web application there. There is a page dedicated to this type of deployment and you can read it here: [Micro at Heroku](/micro_for/heroku.md/). More providers and examples will be added as this documentation evolves, stay tuned.
+Soon you have a layout and you would like to expose it to your client. With Micro you can quickly deploy your app into the cloud and start your Micro web application there. There is a page dedicated to this type of deployment and you can check it here: [Micro at Heroku](/micro_for/heroku.md/). More deployment examples will be added as this documentation evolves, stay tuned.
 
 Have fun!
 
