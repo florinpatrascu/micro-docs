@@ -13,16 +13,17 @@ In the same spirit of the document describing th [Micro framework for Designers]
     - local
     - cloud
  
-
-### 1. Static content <name id="static">
+<name id="static">
+### 1. Static content 
   
 > in progress
 
-
-### 2. Dynamic content <name id="dynamic">
+<name id="dynamic">
+### 2. Dynamic content 
 
 > in progress
-  
-### 3. Deployment <name id="deployment">
+
+<name id="deployment">  
+### 3. Deployment 
 
 > in progress
