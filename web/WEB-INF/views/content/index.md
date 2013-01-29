@@ -5,38 +5,36 @@ We hope Micro will help you develop web applications while increasing the fun qu
 #### Installing Micro
 Micro can be downloaded from Github and you will need just a few commands to make it available to your console. For the examples below we presume you're in your user home folder: `~/`. Get the code:
     
-    git clone https://github.com/florinpatrascu/micro
+    $ git clone https://github.com/florinpatrascu/micro
 
 Build the framework:
 
-    cd micro
-    ant dist
+    $ cd micro
+    $ ant dist
     
 Add the framework installation folder to your current path and define the `MICRO_HOME` environment variable. For OSX, this means editing your `~/.profile` file and adding the following: 
     
-    export MICRO_ENV="~/micro"
-    export PATH=$PATH:$MICRO_ENV/bin:
+    $ export MICRO_HOME="~/micro"
+    $ export PATH=$PATH:$MICRO_HOME/bin:
 
 Reload your profile:
 
-    source ~/.profile
+    $ source ~/.profile
     
-Check if the Micro command line tools (CLI) are available:
+Check if the Micro command line interface (CLI) is available:
     
-    cd
-    micro -v
+    $ cd
+    $ micro -v
 
 If everything is in place and properly installed, you should see: `Micro x.y.z`
 
-More about the CLI here: [The Micro console](/cli.md/). 
-    
 
 #### Creating a new Micro web application
-Micro is providing a simple command line interface (CLI) to help you creating new applications, start the server and deploy the web application<sup>[(1)](/index.md#1)</sup>. Provided you have installed the Micro command line tools properly, the following few commands will create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
+Micro is providing a simple command line interface [CLI](/cli.md/) to help you creating new applications, start the server and deploy the web application<sup>[(1)](/index.md#1)</sup>. Provided you have installed the Micro command line tools properly, the following few commands will create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
 
-    micro new hello_world
-    cd hello_world
-    micro start
+    $ micro new hello_world
+    $ cd hello_world
+    $ micro start
 
 You will see something like this almost immediately:
     

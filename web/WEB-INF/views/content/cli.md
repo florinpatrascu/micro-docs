@@ -6,13 +6,13 @@ The command line for Micro is: `micro`, and provided you have [installed properl
 
     $ micro new 
     $ micro start 
-    $ micro deploy   
+    $ micro deploy (not yet implemented)   
 
 #### New
 Creating a new web application. Go to a folder dedicated to creating projects, say `projects` in your home directory and run the `new` micro command, followed by the name of the application:
 
     $ cd ~/projects
-    $ micro new hello -d "A Hello world web application"
+    $ micro new hello
 
 A new folder is created: `hello`, and it contains a typical Micro folder structure with everything you need to start developing a web site. This is the resulted layout:
 
@@ -35,7 +35,7 @@ A new folder is created: `hello`, and it contains a typical Micro folder structu
 #### Start
 You can start Micro in server mode. Micro is using the popular Jetty web-server under the hood. Go to the newly created `hello` folder and start the server:
 
-    $ cd ~/projects/hello
+    $ cd hello
     $ micro start
 
 You will see immediately the following message (simplified, for brevity):
@@ -72,9 +72,9 @@ You can point your browser to `http://localhost:8080` and you should see:
 Your web application can be packed in a special format and deployed to the cloud. Provided you have an account with Heroku, the following command will deploy your `hello` web application to Heroku.
     
     $ cd ~/projects/hello
-    $ micro deploy -t heroku
+    $ micro deploy heroku (not yet implemented)
 
-Please follow this [link](/production.md/) for more details about running a Micro web application at Heroku.
+Please follow this [link](/micro_for/heroku.md/) for more details about deploying a Micro web application at Heroku.
 
 More details will be added as we improve the command line tools for Micro.
     
