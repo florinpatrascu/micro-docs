@@ -3,37 +3,40 @@
 We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you creating web application in Java with very little effort. Before going forward please check the few **[prerequisites](/misc/check_java.md)** and follow the simple steps there to prepare your environment for running Micro. 
 
 #### Installing Micro
-Micro can be downloaded from Github and you will need just a few commands to make it available to your console. First, get the code <span class="muted">(the examples below are presuming your home folder)</span>:
+Micro can be downloaded from Github and you will need just a few commands to make it available to your console. For the examples below we presume you're in your user home folder: `~/`. Get the code:
     
-    $ git clone https://github.com/florinpatrascu/micro
+    git clone https://github.com/florinpatrascu/micro
 
 Build the framework:
 
-    $ cd micro
-    $ ant dist
+    cd micro
+    ant dist
     
-Add the framework installation folder to your current path. For OSX, this means doing something like this:
-
-    $ echo "export PATH=$PATH:~/micro/bin" >> ~/.profile
-
-or edit your profile file and add this: 
-
-    export PATH=$PATH:~/micro/bin
-
-Now check if the Micro command line tools (CLI) are available:
+Add the framework installation folder to your current path and define the `MICRO_HOME` environment variable. For OSX, this means editing your `~/.profile` file and adding the following: 
     
-    $ cd
-    $ micro -h
+    export MICRO_ENV="~/micro"
+    export PATH=$PATH:$MICRO_ENV/bin:
 
-If everything is in place and properly installed, you should see Micro displaying the help text for the available commands. More about the CLI here: [The Micro console](/cli.md/). 
+Reload your profile:
+
+    source ~/.profile
+    
+Check if the Micro command line tools (CLI) are available:
+    
+    cd
+    micro -v
+
+If everything is in place and properly installed, you should see: `Micro x.y.z`
+
+More about the CLI here: [The Micro console](/cli.md/). 
     
 
 #### Creating a new Micro web application
-Micro is providing a simple command line interface (CLI) to help you creating new applications, start a local Micro application in server mode and deploy the web application. Provided you have installed the Micro command line tools properly, the following few commands will create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
+Micro is providing a simple command line interface (CLI) to help you creating new applications, start the server and deploy the web application<sup>[(1)](/index.md#1)</sup>. Provided you have installed the Micro command line tools properly, the following few commands will create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
 
-    $ micro new hello_world
-    $ cd hello_world
-    $ micro start
+    micro new hello_world
+    cd hello_world
+    micro start
 
 You will see something like this almost immediately:
     
@@ -62,6 +65,11 @@ We use the [GitHub issue tracker](https://github.com/florinpatrascu/micro/issues
   - [Apache Wink](http://en.wikipedia.org/wiki/Apache_Wink) - used as a future support for [JSR-311](http://www.jcp.org/en/jsr/detail?id=311).
   - to all our **contributors** and **supporters**. Cheers!
   
+<hr>
+<sub>*Notes:*</sub>
+
+<name id="1"/><sup>1</sup> - deploying applications from the command line not yet finalized.
+
 ### License
 
     Copyright (c) 2012-2013 Florin T.Pătraşcu
@@ -77,4 +85,4 @@ We use the [GitHub issue tracker](https://github.com/florinpatrascu/micro/issues
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-    
+
