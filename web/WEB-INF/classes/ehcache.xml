@@ -23,6 +23,7 @@
             overflowToDisk="false"
             timeToIdleSeconds="10"
             timeToLiveSeconds="20"
+            statistics="true"
             />
 
     <cache name="memCache"
@@ -33,6 +34,7 @@
             overflowToDisk="false"
             diskPersistent="false"
             diskExpiryThreadIntervalSeconds="60"
+            statistics="true"
              />
              
     <cache name="views"
@@ -42,6 +44,7 @@
             timeToLiveSeconds="420"
             overflowToDisk="false"
             diskPersistent="false"
+            statistics="true"            
             diskExpiryThreadIntervalSeconds="60"
              />
  </ehcache>
