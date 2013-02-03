@@ -32,7 +32,7 @@ If successfully loaded, Micro will display a simple startup message when the app
     INFO ... .micro.SiteContext - Extensions:
     INFO ... .micro.SiteContext -   i18N, loaded.
 
-### Localize you site
+### Localize yourß site
 Say you have a web page that contains a some text that has to be presented in multiple languages, the: `header.html`, a page you want to include and reuse in your templates. We will use the Velocity template language for the next few examples. This is the initial version of the `header.html`, its static version:
 
     header.html:
