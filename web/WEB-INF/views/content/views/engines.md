@@ -77,7 +77,49 @@ Learn more about the FreeMarker engine:
 
  - [features](http://freemarker.sourceforge.net/features.html)
  - FreeMarker [Wiki](http://freemarker.org/wiki/homepage.action)
- 
+
+### <name id="StringTemplate">StringTemplate ###
+
+<blockquote>
+  <p>StringTemplate is a java template engine (with ports for C#, Python) for generating source code, web pages, emails, or any other formatted text output. StringTemplate is particularly good at code generators, multiple site skins, and internationalization/localization. </p>
+  <small>source: <cite title="Source Title"><a = href="http://www.stringtemplate.org/">http://www.stringtemplate.org/</a></cite></small>
+</blockquote>
+  
+
+
+Micro supports the StringTemplate engine through a recent extension; the [ST](https://github.com/florinpatrascu/micro-extensions/tree/master/st), respectively.
+
+**Installing and using the `StringTemplate` extension**
+
+Copy (or create symbolic links) the `st` folder and `st.yml` file to your application extensions folder. The `extensions` folder will contain at least the following:
+
+    extensions/
+      ├── st/ 
+      ├── st.yml
+      └── ...
+
+The `st.yml` may contain various configuration options for the `StringTemplate` engine. Example of a config file switching the `StringTemplate` expression delimiters from the default: `<` and `>`, to: `$` and `$`: 
+
+    class: ca.simplegames.micro.extensions.STExtension
+    engine:
+      name: st
+      class: ca.simplegames.micro.viewers.st.STViewRenderer
+      options:
+        delimiters: "$$"
+
+See [this link](http://www.antlr.org/wiki/display/ST/Setting+the+expression+delimiters) for more details.
+
+Edit the `application.bsh` startup controller and require the `st` extension, example:
+
+    site.ExtensionsManager
+        .require("i18N")
+        .require("st"); // <-- just added
+        
+That's all. The `StringTemplate` engine will be automatically configured by this extension and made available to the entire application.
+
+Restart the app and use your `StringTemplate` views.
+
+
 ### Building Your Own
 To build your own Template engine you must implement the `ca.simplegames.micro.viewers.ViewRenderer` interface. Take a look at the available implementations to have an idea about how it is done. Please send us a pull request, if you would like your implementation to be included in the Micro default distribution.
 
