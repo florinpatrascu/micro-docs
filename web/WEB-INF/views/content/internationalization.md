@@ -7,17 +7,19 @@ First make sure you have the `i18n` extension loaded in the system. The configur
 
     #alias: L10n
     class: ca.simplegames.micro.extensions.i18n.I18NExtension
-    intercept: {parameter_name: language, scope: "session, request, context"}
+    intercept: {parameter_name: locale, scope: "session, request, context"}
     default_encoding: utf-8
     resource_cache: 10
     base_names: [config/locales/messages]
     
 This file is instructing Micro about the following aspects:
 
-  - `intercept` - declares a parameter with a name defined by the user: `language` in this case, parameter that can be transmitted through any of these Micro components: `session`, `request` or `context`. For example, the link: `http://mysite.com/about/index.html?language=fr`, will use the French localization for displaying the `about/index.html` page.
+  - `intercept` - declares a parameter with a name defined by the user: `locale` in this case, parameter that can be transmitted through any of these Micro components: `session`, `request` or `context`. For example, the links: `http://mysite.com/about/index.html?locale=fr`or `http://mysite.com/about/index.html?locale=fr_FR`, will use the French  `language_Country` localization for displaying the `about/index.html` page.
   - `default_encoding` - the encoding used by the i18N extension. We encourage you to leave it as is: `utf-8`, respectively. Read more about encoding [here](http://en.wikipedia.org/wiki/UTF-8).
   - `resource_cache` - how many seconds the localization properties will be cached before reloading the definitions.
-  - `base_names` - the location and name prefix for the properties files containing the translated text. With this configuration, Micro will load properties from the following files: `config/locales/messages_en.properties` for English, `config/locales/messages_de.properties` for German, and so on.
+  - `base_names` - the location and name prefix for the properties files containing the translated text. With this configuration, Micro will load properties from the following files: `config/locales/messages_en.properties` or `config/locales/messages_en_GB.properties` for English, `config/locales/messages_de_DE.properties` for German, and so on.
+
+The properties file names contain a **language** and an optional **country** ISO code, allowing you to fine tune the translation; i.e. currencies, date format, etc.
 
 Second, verify that the `i18N` extension is required by your application. You can do that by simply adding few lines of code in the `config/application.bsh` startup controller. Example of enabling the `i18N` extension:
 
@@ -48,21 +50,25 @@ Where `#i18N` is a Velocity [macro](http://people.apache.org/~henning/velocity/h
 
 Translate the `hello_world` key in the following languages and store them in the appropriate properties files in the `config/locales/` folder. Example.
 
-            path           | language |    content
-    ----------------------------------|-----------------------------------
-    messages_en.properties | English  | hello_world=Hello World!
-    messages_fr.properties | French   | hello_world=Bonjour tout le monde!
-    messages_de.properties | German   | hello_world=Hallo Welt!
-    messages_gr.properties | Greek    | hello_world=γειά σου κόσμος
+            path              | language |    content
+    --------------------------|----------|-----------------------------------
+    messages_en.properties    | English  | hello_world=Hello World!
+    messages_fr.properties    | French   | hello_world=Bonjour tout le monde!
+    messages_de.properties    | German   | hello_world=Hallo Welt!
+    messages_de_CH.properties | German   | hello_world=grüezi!
+    messages_gr.properties    | Greek    | hello_world=γειά σου κόσμος
     
 You don't have to restart the Micro web application, the changes will be available right away. Visit your page containing the `header.html` and you should see:
 
     <p>Bonjour tout le monde!</p>   
     
-for a page where you specified the French language as a request parameter: `http://localhost/index.html?language=fr` or this:
+for a page where you specified the French language as a request parameter: `http://localhost/index.html?locale=fr` or this:
 
     <p>Hallo Welt!</p>
-if the request parameter was specifying the German language: `http://localhost/index.html?language=de`
+if the request parameter was specifying the German language: `http://localhost/index.html?locale=de`, and:
+
+    <p>grüezi!</p>
+for a request specifying the Switzerland country and German language localization: `http://localhost/index.html?locale=de_CH`
 
 There is a full example in the Micro examples repository at Github, see the [Hello World](https://github.com/florinpatrascu/micro-examples/tree/master/hello_world) web application for how the `i18N` support is used. 
 
