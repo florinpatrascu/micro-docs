@@ -74,6 +74,94 @@ The following objects are almost<sup>1</sup> guaranteed to be available in the `
 
 We mentioned above just the main objects available in the `context`, you're encouraged to check the source code for learning what other interesting animals lurk in the magical **"Lake of Context"** at runtime ;)
 
+###<name id="crepe_suzettes"/> Wrapped Controllers, or how to make Crêpe Suzettes from scripting ;)
+On one hand, the scripting controllers are super useful and powerful, you would miss out on a lot of development and testing flexibility by ignoring them. On the other hand they lack some of the pigments available in pure Java classes; i.e. annotations.
+
+Ok, how many times you had to write something like this:
+
+    try {
+         // ... BEFORE 
+     } catch ( ...) {
+         // on exceptions(s)
+     } finally {
+         // ... AFTER
+     }
+
+eh? Probably a lot. In Java we have AOP and we can deal with the code above in many ways. We can write similar code in scripting, but without dependency injection, annotation and such, why repeating the code? For example, say we need to open and close db connections:
+
+    try {
+         open
+         ** DO STUFF **
+     } catch ( ...) {
+         booboo
+     } finally {
+         close
+     }
+
+or log stuff, etc.? Wouldn't be nice in a scripting controller to write just this:
+
+    ** DO STUFF **
+
+instead of the repetitive code we see few lines above? In Micro we can use a coding style that it is so light, so simple and so good some times, that is hard not to use it a lot: the `wrappers`. We affectionally call this style: the Crêpe Suzette style. It is a sort of poor man solution AOP.
+
+When you are in situations like the ones above, you can use a `wrapper`, or a crêpe suzette. Say you have a View Scripting Controller that will use some magic ORM (you name it), and every time the controller is evaluated it will have to open a db connection or create a transaction, "talk" to the models, extract some juice for the View and then close the db connection or the transaction. And imagine you have more than a handful of scripting controllers doing this sort of work. Using the Crêpe Suzette style, you can do the following:
+
+**Implement a `wrapper`** 
+
+Write a Java class implementing the `ca.simplegames.micro.controllers.ControllerWrapper` interface. Oversimplified example:
+    
+    package omg.i.love.crepe.suzettes;
+    
+    public class ORMWrapper implements ControllerWrapper {
+
+        @Override
+        public void execute(String controllerName, MicroContext context, Map configuration) throws... {
+
+            try {
+                // do wrapper's own BEFORE stuff
+                
+                // Execute the controller:
+                context.getSiteContext().getControllerManager().execute(controllerName, context, configuration);
+                
+            } catch (RuntimeException rte) {
+                onException();
+                .....
+            } catch (ControllerNotFoundException e) {
+                onException();
+                ....
+            } finally {
+                // do wrapper's own AFTER stuff
+            }
+        }
+
+        private void onException() {
+            // do wrapper stuff when errors are trapped
+        }
+    }
+   
+**Use it in Views as a wrapper around the View controller**
+
+In the View config `.yml` file:
+
+    controllers:
+      - controller:
+          wrapper: omg.i.love.crepe.suzettes.ORMWrapper
+          name: WrappedScript.bsh
+          options: # the `configuration` object, shared between the wrapper and controller
+            wrapped_with: love #;)
+    
+When Micro will evaluate the controllers for a View like this, the wrapper class execute method will be executed instead of the controller. Your code being responsible for chaining the execution further to the scripting controller (or compiled code). The execution plan for the View above:
+
+ - web request
+ - ORMWrapper.execute
+   - do the BEFORE stuff
+   - execute WrappedScript.bsh 
+   - do the AFTER stuff
+ - render the view
+ - respond
+
+That's all; the Crêpe Suzette style :)
+
 ### Testing Controllers
 We will come back to this topic in the [Micro For Developers](/micro_for/developers.md/) section, for now we just want to show you how easy is to test a View and its Controller(s) in a simple [unit](https://github.com/KentBeck/junit) test.
 
