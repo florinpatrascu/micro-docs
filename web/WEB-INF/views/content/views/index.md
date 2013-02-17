@@ -108,7 +108,7 @@ A View can declare a set of **BEFORE** and **AFTER** filters that will be evalua
 
 The View Filters, the View Controllers and the View, are all sharing a common MicroContext, this way any object published in that context will be available to all of them. 
 
-Please keep in mind that if you define any **after** filters and they are using the context for sharing any objects, these objects cannot by used by the template logic in the View! This is because the **after** Filters are evaluated after the View was already rendered and returned to the caller. The **after** Filters are usually used to close database connections consumed before or during the View rendering process, or for logging, etc.
+Please keep in mind that if you define any **after** filters and they are using the context to share new object instances, these objects cannot by used by the template engine used for rendering the View! This is because the **after** Filters are evaluated after the View was already rendered and returned to the caller. The **after** Filters are usually used for closing database connections consumed before or during the View rendering process, for logging, etc.
 
 Unlike their older [brothers](/filters.md/), the View Filters will ignore the **path** parameter if present.
 
