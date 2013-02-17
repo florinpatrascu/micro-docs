@@ -82,7 +82,35 @@ An important aspect worth noting here, is the fact that all the Controllers defi
     user = context.get("user");
     context.put("name", user != null? user.Name : "Joe Doe");      
 
-Straightforward, we think?!
+We believe this is straightforward.
+
+###<name id="views_and_filters"> Views, Controllers and Filters
+A View can declare a set of **BEFORE** and **AFTER** filters that will be evaluated before and after the View Controllers. Example of a View configuration:
+        
+    filters:
+      - before:
+          controller: filters/BeforeViewFilter1.bsh
+          options: {bee: buzz}
+
+      - before:
+          controller: filters/BeforeViewFilter2.bsh
+
+      - after:
+          controller: filters/AfterViewFilter1.bsh
+          options:
+            trac: tor
+
+    controllers:
+      - controller:
+          name: org.mydomain.MyNeatController
+      - controller:
+          name: demo/TestServerJsController.js
+
+The View Filters, the View Controllers and the View, are all sharing a common MicroContext, this way any object published in that context will be available to all of them. 
+
+Please keep in mind that if you define any **after** filters and they are using the context for sharing any objects, these objects cannot by used by the template logic in the View! This is because the **after** Filters are evaluated after the View was already rendered and returned to the caller. The **after** Filters are usually used to close database connections consumed before or during the View rendering process, or for logging, etc.
+
+Unlike their older [brothers](/filters.md/), the View Filters will ignore the **path** parameter if present.
 
 ### Default View context objects
 As mentioned before, the View will receive a thread-safe context already containing some important objects that Micro is providing **before** executing any controllers, in case there are any controllers defined for the View. These objects are:
