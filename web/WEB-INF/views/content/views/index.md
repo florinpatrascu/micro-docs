@@ -110,6 +110,8 @@ The View Filters, the View Controllers and the View, are all sharing a common Mi
 
 Please keep in mind that if you define any **after** filters and they are using the context to share new object instances, these objects cannot by used by the template engine used for rendering the View! This is because the **after** Filters are evaluated after the View was already rendered and returned to the caller. The **after** Filters are usually used for closing database connections consumed before or during the View rendering process, for logging, etc.
 
+<span class="label label-important">Heads up!</span> 
+
 Unlike their older [brothers](/filters.md/), the View Filters will ignore the **path** parameter if present.
 
 ### Default View context objects
