@@ -81,13 +81,13 @@ At the rendering time, after the business logic was evaluated, your `registratio
 
 Sometimes it is difficult to spot the rendering errors, especially if you have multiple partials nested together. Use the: `$!{error}` object, to find more details about the error. You can use it in your 404 template, example:
 
-    `templates/404.html` excerpt:
-    -----------------------------
+    templates/404.html, excerpt:
+    ----------------------------
     
     <div class="container">
       <div class="row">
         <div class="span9 offset1">
-          <h1>500</h1>
+          <h1>404</h1>
           <h3>
             Error in path: $!{path}
           </h3>
