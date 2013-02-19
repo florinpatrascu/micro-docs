@@ -77,6 +77,29 @@ The user will get back a nice and a consistent single html page that in the back
   
 At the rendering time, after the business logic was evaluated, your `registration.html` page from the `views/content` folder, will **pull** the `login_dialog.html` from the `views/partials` folder and will result into a complete functional Registration dialog page. While this is happening Micro will take care of caching the most frequent used content so you will not disappoint your users. 
 
+<span class="label label-important">Heads up!</span> 
+
+Sometimes it is difficult to spot the rendering errors, especially if you have multiple partials nested together. Use the: `$!{error}` object, to find more details about the error. You can use it in your 404 template, example:
+
+    `templates/404.html` excerpt:
+    -----------------------------
+    
+    <div class="container">
+      <div class="row">
+        <div class="span9 offset1">
+          <h1>500</h1>
+          <h3>
+            Error in path: $!{path}
+          </h3>
+          <p class="text-muted">
+            $!{error}
+          </p>
+        </div>
+      </div>  
+    </div>
+  
+
+
 A bit about localization. You most probably want to localize your web pages and if so then you will want to check the [Internationalization](internationalization.md) topic. Here's the gist of it:
 
   - translate your text and store it as `label=translated text` in the `message_<lng>.properties` files, where the `<lng>` stands for language; `en` for English, `de` for German, and so on; see the [Language localization](http://en.wikipedia.org/wiki/Language_localisation) for more details.
