@@ -171,11 +171,11 @@ We will come back to this topic in the [Micro For Developers](/micro_for/develop
     
     @Test
     public void testSomeDynamicContent() throws Exception {
-        Context<String> input = new MapContext<String>()
-                .with(Rack.REQUEST_METHOD, "GET")
-                .with(Rack.PATH_INFO, "/result.html")
-                .with(Rack.PARAMS, Collections.singletonMap("exp",
-                        new String[]{URLEncoder.encode("2+2", Globals.UTF8)}));
+      Context<String> input = new MapContext<String>()
+              .with(Rack.REQUEST_METHOD, "GET")
+              .with(Rack.PATH_INFO, "/result.html")
+              .with(Rack.PARAMS, Collections.singletonMap("exp", 
+                    URLEncoder.encode("2+2", Globals.UTF8)));
 
         RackResponse response = micro.call(input);
         Assert.assertTrue("Can't parse/evaluate the request parameters",
@@ -192,7 +192,7 @@ The test above running agains this View:
 a View associated with a Controller implemented like this (example):
 
     expression = URLDecoder.decode(
-      context.get(Globals.PARAMS).get("exp")[0], Globals.UTF8);
+      context.get(Globals.PARAMS).get("exp"), Globals.UTF8);
 
     // I know we're wasting resources, but it is for testing the
     // chained Scripting managers
