@@ -1,6 +1,6 @@
 ## The Micro console
 
-Micro is providing a limited set of command line tools to help you quickly creating a new web application, start it in server mode for quickly prototyping and for deploying the app to the cloud. It is a very early support currently in development but please stay tuned and follow this page for updates.
+Micro provides a limited set of command line tools to help you quickly create a new web application, start it in server mode for quick prototyping, and deploy it to the cloud. This support is currently in early development, but please stay tuned and follow this page for updates.
 
 The command line for Micro is: `micro`, and provided you have [installed properly](/misc/check_java.md#cli_path/) the framework, the following functions are available:
 
@@ -9,7 +9,7 @@ The command line for Micro is: `micro`, and provided you have [installed properl
     $ micro deploy (not yet implemented)   
 
 #### New
-Creating a new web application. Go to a folder dedicated to creating projects, say `projects` in your home directory and run the `new` micro command, followed by the name of the application:
+Creates a new web application. Go to a folder dedicated to creating projects, say, `projects` in your home directory, and run the `new` micro command, followed by the name of the application:
 
     $ cd ~/projects
     $ micro new hello

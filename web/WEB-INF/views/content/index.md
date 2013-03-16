@@ -1,9 +1,11 @@
-**Micro**, for short: **(μ)** or **[Mu](http://en.wikipedia.org/wiki/Mu_\(letter\))**, is a modular Model View Controller framework ([MVC Pull](http://en.wikipedia.org/wiki/Web_application_framework#Push-based_vs._pull-based)) for web development, and it was designed with simplicity in mind. Compared with other Java web frameworks, Micro doesn't force you to use the Java language for creating dynamic content, nor does it pigment your code with Java [syntactic metadata](http://en.wikipedia.org/wiki/Java_annotation) or anything like that. With Micro you can start developing your web application right away even if the only content your site has is plain text or [Markdown](http://daringfireball.net/projects/markdown/) documents; you don't need Java for that. Micro uses Java under the hood, providing you the support that is specific to the web development: localization, template languages, scripting support for more advanced use, and a modular way to extend your dynamic content with controllers written in Java or using scripting, such as: [Beanshell](http://www.beanshell.org/), server side [Javascript(Rhino)](http://www.mozilla.org/rhino/), [JRuby](http://jruby.org/) and [more](http://commons.apache.org/bsf/).
+**Micro**, for short: **(μ)** or **[Mu](http://en.wikipedia.org/wiki/Mu_\(letter\))**, is a modular Model View Controller framework ([MVC Pull](http://en.wikipedia.org/wiki/Web_application_framework#Push-based_vs._pull-based)) for web development. It was designed with simplicity in mind. Compared with other Java web frameworks, Micro doesn't force you to use the Java language for creating dynamic content, nor does it pigment your code with Java [syntactic metadata](http://en.wikipedia.org/wiki/Java_annotation) or anything like that. With Micro you can start developing your web application right away even if the only content your site has is plain text or [Markdown](http://daringfireball.net/projects/markdown/) documents; you don't need Java for that. Micro uses Java under the hood, providing you the support that is specific to the web development: localization, template languages, scripting support for more advanced use, and a modular way to extend your dynamic content with controllers written in Java or using scripting, such as: [Beanshell](http://www.beanshell.org/), server side [Javascript (Rhino)](http://www.mozilla.org/rhino/), [JRuby](http://jruby.org/) and [more](http://commons.apache.org/bsf/).
 
-We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired from [Sinatra](http://www.sinatrarb.com/), Micro will help you create web applications in Java with very little effort. Before going forward please check the few **[prerequisites](/misc/check_java.md)** and follow the simple steps there to prepare your environment for running Micro. 
+We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired by [Sinatra](http://www.sinatrarb.com/), Micro will help you create web applications in Java with very little effort. Before going forward please check the few **[prerequisites](/misc/check_java.md)** and follow the simple steps there to prepare your environment for running Micro. 
 
 #### Installing Micro
-Micro can be downloaded from Github and you will need just a few commands to make it available to your console. For the examples below we presume you're in your user home folder: `~/`. Get the code:
+Micro can be downloaded from Github, and you will need just a few commands to make it available to your console. For the examples below we presume you're in your user home folder: `~/`. 
+
+Get the code:
     
     $ git clone https://github.com/florinpatrascu/micro
 
@@ -44,7 +46,7 @@ You will see something like this almost immediately:
     |_| |_| |_|_|\___|_|  \___/ 
     = a modular micro MVC Java framework
 
-and you can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
+You can now visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
 
 We hope you'll enjoy writing web applications with **Micro**.
 
