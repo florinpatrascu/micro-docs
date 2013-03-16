@@ -1,9 +1,9 @@
 ## Configuring Micro
 
-Micro depends on a YAML file for configuring the framework components. This file must be in the application configuration folder and it has the name: `micro-config.yml`. Next we'll see some configuration examples with in line comments explaining the meaning of each element.
+Micro depends on a YAML file for configuring framework components. This file must be in the application configuration folder and it has the name: `micro-config.yml`. Below are some configuration examples with in-line comments explaining the meaning of each element.
 
 ### Typical config file
-This is the typical configuration file. It has one Template engine, Velocity in this case, and one dynamic content repository plus the mandatory `templates` one. The name of the web app in this case is: **blog**, and the app will run in `development` mode. As a reminder, the cache is disabled in `development` mode.
+This is the typical configuration file. It has one Template engine, [Velocity](http://velocity.apache.org/) in this case, and one dynamic content repository plus the mandatory `templates` repo. The name of the web app in this case is: **blog**, and the app will run in `development` mode. As a reminder, the cache is disabled in `development` mode.
 
     # the name of the web application
     name: blog
@@ -116,7 +116,7 @@ The application below will have multiple Template engines enabled, so you can mi
           class: ca.simplegames.micro.viewers.freemarker.FreemarkerViewRenderer
     ... 
 
-These are two variations of the Micro configuration file. In the configurations above we consider the folder `views` for storing the repositories, but you can define your own naming convention. You can also name your content repositories differently than us here, for example:
+These are two variations of the Micro configuration file. In the configurations above we consider the folder `views` for storing the repositories, but you can define your own naming convention. You can also name your content repositories differently than we do here, for example:
 
     repositories:
       content: {path: dynamic/content, cache: contentCache, config: config, default: true}
@@ -143,4 +143,4 @@ The fragment above is presuming your [application folder layout](/microwebapp.md
          └ templates              
        ...
 
-Should be easy to configure Micro web application :) 
+Should be easy to configure a Micro web application :) 
