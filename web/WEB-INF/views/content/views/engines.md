@@ -77,6 +77,33 @@ Learn more about the FreeMarker engine:
 
  - [features](http://freemarker.sourceforge.net/features.html)
  - FreeMarker [Wiki](http://freemarker.org/wiki/homepage.action)
+  
+  
+### <name id="Mustache">Mustache
+Used at Twitter for their web site, email, syndicated widgets, etc., the [Mustache(.java)](https://github.com/spullara/mustache.java) is a derivative of [mustache.js](http://mustache.github.com/mustache.5.html)
+
+You can use the Mustache templates with Micro via the [Mustache extension](https://github.com/florinpatrascu/micro-extensions/tree/master/mustache). To install it, please follow the simple steps described in this  [README](https://github.com/florinpatrascu/micro-extensions/blob/master/mustache/README.md) file.
+
+The `extensions` folder will contain at least the following:
+
+    extensions/
+      ├── mustache/ 
+      ├── mustache.yml
+      └── ...
+
+And this is the `mustache.yml` extension configuration file will contain the following:
+    
+    class: ca.simplegames.micro.extensions.MustacheExtension
+    engine:
+      name: mustache
+      class: ca.simplegames.micro.viewers.mustache.MustacheViewRenderer
+      options:
+        cache: views 
+        #      ^^^^^ the name of the cache used for the compiled mustaches.
+
+Where you can specify the cache name to be used for the compiled templates. A very basic setup.
+
+Visit [Mustache](http://mustache.github.com/) to learn more about this template engine.
 
 ### <name id="StringTemplate">StringTemplate ###
 
@@ -85,8 +112,6 @@ Learn more about the FreeMarker engine:
   <small>source: <cite title="Source Title"><a = href="http://www.stringtemplate.org/">http://www.stringtemplate.org/</a></cite></small>
 </blockquote>
   
-
-
 Micro supports the StringTemplate engine through a recent extension; the [ST](https://github.com/florinpatrascu/micro-extensions/tree/master/st), respectively.
 
 **Installing and using the `StringTemplate` extension**
