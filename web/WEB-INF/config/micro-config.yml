@@ -30,3 +30,5 @@ template_engines:
 welcome_file: index.md
 mime_types:
   .md: text/html; charset=utf8
+
+LEGACY: true
