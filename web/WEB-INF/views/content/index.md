@@ -1,57 +1,73 @@
-**Micro**, for short: **(μ)** or **[Mu](http://en.wikipedia.org/wiki/Mu_\(letter\))**, is a modular Model View Controller framework ([MVC Pull](http://en.wikipedia.org/wiki/Web_application_framework#Push-based_vs._pull-based)) for web development. It was designed with simplicity in mind. Compared with other Java web frameworks, Micro doesn't force you to use the Java language for creating dynamic content, nor does it pigment your code with Java [syntactic metadata](http://en.wikipedia.org/wiki/Java_annotation) or anything like that. With Micro you can start developing your web application right away even if the only content your site has is plain text or [Markdown](http://daringfireball.net/projects/markdown/) documents; you don't need Java for that. Micro uses Java under the hood, providing you the support that is specific to the web development: localization, template languages, scripting support for more advanced use, and a modular way to extend your dynamic content with controllers written in Java or using scripting, such as: [Beanshell](http://www.beanshell.org/), server side [Javascript (Rhino)](http://www.mozilla.org/rhino/), [JRuby](http://jruby.org/) and [more](http://commons.apache.org/bsf/).
+> <span class="label label-info">News: </span> <small>This documentation is going to be updated for the new release of Micro. Please follow the development on GifHub for more news. Thank you!</small>
 
-We hope Micro will help you develop web applications while increasing the fun quotient of programming as well. Inspired by [Sinatra](http://www.sinatrarb.com/), Micro will help you create web applications in Java with very little effort. Before going forward please check the few **[prerequisites](/misc/check_java.md)** and follow the simple steps there to prepare your environment for running Micro. 
+**Micro**, for short: **(μ)** or **[Mu](http://en.wikipedia.org/wiki/Mu_\(letter\))**, is a modular Model View Controller framework ([MVC Pull](http://en.wikipedia.org/wiki/Web_application_framework#Push-based_vs._pull-based)) for rapid web development. Flexible and powerful at the same time, Micro lets you choose your tools from a decently sized pool of well known products:
 
-#### Installing Micro
-Micro can be downloaded from Github, and you will need just a few commands to make it available to your console. For the examples below we presume you're in your user home folder: `~/`. 
+ - [Velocity](http://micro-docs.simplegames.ca/views/engines.md#Velocity), [Markdown](http://micro-docs.simplegames.ca/views/engines.md#Markdown) [Freemarker](http://micro-docs.simplegames.ca/views/engines.md#Freemarker), [Mustache (java)](http://micro-docs.simplegames.ca/views/engines.md#Mustache), [Stringtemplate](http://micro-docs.simplegames.ca/views/engines.md#StringTemplate); for designing the dynamic content of your web pages.
+ - [Beanshell](http://www.beanshell.org/), server side [Javascript(Rhino)](http://www.mozilla.org/rhino/), [JRuby](http://jruby.org/) and [more](http://commons.apache.org/bsf/); for prototyping controllers before converting them to Java classes, if need be.
 
-Get the code:
-    
-    $ git clone https://github.com/florinpatrascu/micro
+#### Using Micro
 
-Build the framework:
+The easiest way to start developing with Micro is to download the source code from [Github](https://github.com/florinpatrascu/micro)
 
-    $ cd micro
-    $ ant dist
-    
-Add the framework installation folder to your current path and define the `MICRO_HOME` environment variable. For OSX, this means editing your `~/.profile` file and adding the following: 
-    
-    $ export MICRO_HOME="~/micro"
-    $ export PATH=$PATH:$MICRO_HOME/bin:
+    git clone https://github.com/florinpatrascu/micro
 
-Reload your profile:
+Build it:
 
-    $ source ~/.profile
-    
-Check if the Micro command line interface is available:
-    
-    $ cd
-    $ micro -v
-
-If everything is in place and properly installed, you should see: `Micro x.y.z`
-
+    cd micro
+    mvn clean install test -Dtest=MicroGenericTest
+    # or: 
+    mvn clean install -DskipTests=true  # to skip the tests
 
 #### Creating a new Micro web application
-Micro provides a simple command line interface [CLI](/cli.md/) to help you create new applications, start the server and deploy the web application<sup>[(1)](/index.md#1)</sup>. Provided you have installed the Micro command line tools properly, the following few commands will create a new micro web application and start Micro with the embedded [web server](http://docs.codehaus.org/display/JETTY/About+Jetty):
+Create a new webapp using the [Micro quickstart Maven archetype](archetypes/README.md)
 
-    $ micro new hello_world
-    $ cd hello_world
-    $ micro start
+    cd archetypes/quickstart
+    mvn install
 
-You will see something like this almost immediately:
-    
-     _ __ ___ ( ) ___ _ __ ___ 
-    | '_ ` _ \| |/ __| '__/ _ \ 
-    | | | | | | | (__| | | (_) |
-    |_| |_| |_|_|\___|_|  \___/ 
-    = a modular micro MVC Java framework
+#### Usage from command line
 
-You can now visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
+    mvn archetype:generate \
+      -DarchetypeGroupId=ca.simplegames.micro\
+      -DarchetypeArtifactId=micro-quickstart \
+      -DarchetypeVersion=0.2.2 \
+      -DgroupId=com.mycompany \
+      -DartifactId=myproject
 
-We hope you'll enjoy writing web applications with **Micro**.
+#### Usage from [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+Open IntelliJ. Choose `File/Import/Existing Project` and point it to `myproject` directory. Or, you can add the `quickstart` archetype in IntelliJ by simply following the few next steps:
 
-Thank you!    
+- `File/New Project`
+- select `Create from archetype` and click the `Add Archetype` button
+- choose `ca.simplegames.micro:micro-quickstart` from the list 
 
+And simply follow the dialog prompted by IntelliJ :)
+
+### Start your web application from command line
+Launching the generated application using the embedded Jetty web server is very easy:
+
+    cd myproject
+    mvn compile install exec:java
+
+    #or: mvn exec:java, if you already built the project and you only need to restart the webapp
+
+
+You can also easily start your web application from IntelliJ.
+
+
+When the Micro web app is started, you will almost immediately see something like this:
+
+         _ __ ___ ( ) ___ _ __ ___
+        | '_ ` _ \| |/ __| '__/ _ \
+        | | | | | | | (__| | | (_) |
+        |_| |_| |_|_|\___|_|  \___/
+        = a modular micro MVC Java framework
+
+and you can visit your web application by pointing your browser to: [http://localhost:8080](http://localhost:8080)
+
+We hope Micro will help you develop web applications while increasing the fun quotient of programming as well.
+
+Have fun!  
+µ
 
 ### Submitting an Issue
 We use the [GitHub issue tracker](https://github.com/florinpatrascu/micro/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. When submitting a bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any other details that may be necessary to reproduce the bug, including your Java version and operating system. Ideally, a bug report should include a pull request with failing specs.
@@ -67,9 +83,6 @@ We use the [GitHub issue tracker](https://github.com/florinpatrascu/micro/issues
   - to all our **contributors** and **supporters**. Cheers!
   
 <hr>
-<sub>*Notes:*</sub>
-
-<name id="1"/><sup>1</sup> - deploying applications from the command line not yet finalized.
 
 ### License
 
