@@ -19,7 +19,7 @@ Build it:
     mvn clean install -DskipTests=true  # to skip the tests
 
 #### Creating a new Micro web application
-Create a new webapp using the [Micro quickstart Maven archetype](archetypes/README.md)
+Create a new webapp using the [Micro quickstart Maven archetype](mvn-archetypes.md)
 
     cd archetypes/quickstart
     mvn install
