@@ -1,4 +1,4 @@
-> <span class="label label-info">News: </span> <small>This documentation is going to be updated for the new release of Micro. Please follow the development on GifHub for more news. Thank you!</small>
+> <span class="label label-info">News: </span> <small>This documentation is going to be updated for the new release of Micro. Please follow the development on Github for more news. Thank you!</small>
 
 **Micro**, for short: **(μ)** or **[Mu](http://en.wikipedia.org/wiki/Mu_\(letter\))**, is a modular Model View Controller framework ([MVC Pull](http://en.wikipedia.org/wiki/Web_application_framework#Push-based_vs._pull-based)) for rapid web development. Flexible and powerful at the same time, Micro lets you choose your tools from a decently sized pool of well known products:
 
